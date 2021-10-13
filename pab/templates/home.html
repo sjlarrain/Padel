@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>PADEL A BENEFICIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="contenedor-barra">
+        <div class="navegador">
+            <div class="left-side">
+                <div class="nav nav-act" >
+                    <a href="{{ url_for('home') }}">Home</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('Contact')}}">Contacto</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('tournaments')}}">Campeonatos</a>
+                </div>
+            </div>
+            <div class="right-side">
+                PADEL A BENEFICIO
+            </div>
+        </div> 
+    </div>
+    <div class="principal">
+        <div class="contenedor-princpal">
+            <div class="left">
+                <div class="img-ausp-1">
+                    <img src="static/imagenes/gatorade.jpg" alt="">
+                </div>
+                <div class="img-ausp-2">
+                    <img src="static/imagenes/gatorade.jpg" alt="">
+                </div>
+            </div>
+            <div class="center">
+                <div class="fondo" style="background-image:url(static/imagenes/campeonato.jpg)";>
+                    <div class="center-inside">
+                        <a href="{{ url_for ('inscripciones')}}">INSCRIPCIONES</a>
+                    </div>
+                </div> 
+                
+                
+            </div>
+            <div class="right">
+                FUNDACION
+            </div>
+        </div>
+    </div>
+    <div class="pie">
+        <small> ES UNA PAGINA HECHA POR MOUSES EN  FRANKFURT Y CURAMAVIDA 2020</small>
+    </div>
+</body>
+</html>

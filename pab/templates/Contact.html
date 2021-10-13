@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>PADEL A BENEFICIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Sen&displa y=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="contenedor-barra">
+        <div class="navegador">
+            <div class="left-side">
+                <div class="nav" >
+                    <a href="{{ url_for('home') }}">Home</a>
+                </div>
+                <div class="nav nav-act">
+                    <a href="{{ url_for('Contact')}}">Contacto</a>
+                </div>
+                <div class="nav">
+                    <a href="{{ url_for('tournaments')}}">Campeonatos</a>
+                </div>
+            </div>
+            <div class="right-side">
+                PADEL A BENEFICIO
+            </div>
+        </div> 
+    </div>
+    <h1>CONTACTOS</h1>
+    <div class="individuos">
+        <div class="nom">
+            <div class="foto">
+                PHOTO
+            </div>
+            <div class="desc">
+               <p>Hola mi nombre es Santiago. Estoy a cargo de la organización de los Campeonatos
+                   y todo lo que esta relacionado a esto. 
+               </p> 
+               <p>Para contactarme puede enviarme un mensaje a +56 9 91296313 o bien un mail a padelabeneficio@gmail.com</p>
+    
+            </div>
+        </div>
+        <div class="nom">
+            <div class="foto">
+                Photo
+            </div>
+            <div class="desc">
+                DESCRIPCION DOS
+            </div>
+        </div>  
+    </div>
+
+</body>
+</html>

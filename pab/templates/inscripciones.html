@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>PADEL A BENEFICIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="contenedor-barra">
+        <div class="navegador">
+            <div class="left-side">
+                <div class="nav" >
+                    <a href="{{ url_for('home') }}">Home</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('Contact')}}">Contacto</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('tournaments')}}">Campeonatos</a>
+                </div>
+            </div>
+            <div class="right-side">
+                PADEL A BENEFICIO
+            </div>
+        </div> 
+    </div>
+<h1>Inscripcion del Campeonato</h1>
+<div class="cabeza">
+    <div class="cabeza-lado">
+        <div class="cabeza-izq">
+            <p>Hola! Bienvenido. Para inscribirte debes colocar tu nombre y la de tu pareja. Para confirmar la participación debes
+                pagar lo antes posible. Te llegará un mail de confirmación.
+            </p>    
+            <p>La cuota de 15.000 tendrás que depositarla a la siguiente cuenta. </br> 
+                Nombre: Santiago José Larrain Valdes </br>
+                Rut: 19.688.452-1 </br>
+                Banco: BICE</br>
+                Cuenta: Vista</br></br>
+                Numero: 150282708</br>
+                Mail: padelabeneficio@gmail.com</br>
+
+            Porfavor incluye el mail de confirmacion. </p>
+        </div> 
+    
+        <div class="cabeza-der">
+            <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                        <li style="font-size: large; color:rgb(0, 255, 0)">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <legend> INSCRIPCION JUGADOR 1</legend>
+                    <div>
+                        {{form.nombre1.label()}}
+                        {% if form.nombre1.errors %}
+                            {{form.nombre1(style='margin:3px; border-color:red;')}}
+                            <div>
+                                {% for error in form.nombre1.errors %}
+                                    <span style="color:red; font-size: small;">{{error}}</span>
+                                {%endfor%}
+                            </div>
+                        {% else %}
+                            {{form.nombre1()}}
+                        {%endif%} 
+                    </div>
+                    <div>
+                        {{form.tel1.label()}}
+                        {% if form.tel1.errors %}
+                            {{form.tel1(style='margin:3px; border-color:red; margin-left:12px')}}
+                            <div>
+                                {% for error in form.tel1.errors %}
+                                    <span style="color:red; font-size: small;" >{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.tel1()}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{form.email.label()}}
+                        {% if form.email.errors %}
+                            {{form.email(style='margin:3px; border-color:red;margin-left:20px')}}
+                            <div>
+                                {% for error in form.email.errors %}
+                                <span style="color:red; font-size: small;">{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{form.email()}}
+                        {% endif %}
+                    </div>
+                </fieldset>
+        </br>
+                <fieldset>
+                    <legend> INSCRIPCION JUGADOR 2</legend>
+                    <div>
+                        {{form.nombre2.label()}}
+                        {% if form.nombre2.errors %}
+                            {{form.nombre2(style='margin:3px; border-color:red;')}}
+                            <div>
+                                {% for error in form.nombre2.errors %}
+                                <span style="color:red; font-size: small;">{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{form.nombre2()}}
+                        {% endif %}
+                    </div>
+                    <div>
+                        {{form.tel2.label()}}
+                        {% if form.tel2.errors %}
+                            {{form.tel2(style='margin:3px; border-color:red; margin-left:12px')}}
+                            <div>
+                                {% for error in form.tel2.errors %}
+                                <span style="color:red; font-size: small;">{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{form.tel2()}}
+                        {% endif %}
+                    </div>
+                </fieldset>
+            </br>
+            <fieldset>
+                <legend>¿CATEGORÍA?</legend>
+                    {{form.categoria.label()}}
+                    {% if form.categoria.errors %}
+                            {{form.categoria()}}
+                        <div>
+                            {% for error in form.categoria.errors %}
+                                <span style="color:red; font-size: small;">{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.categoria()}}
+                    {% endif %}
+               
+            </fieldset>    
+            </br>
+                <fieldset>
+                    <legend>¿Confirmas que los datos estan correctos?</legend>
+                    {{form.confirmacion.label()}}
+                    {% if form.tel2.errors %}
+                            {{form.confirmacion(style='margin:3px; border-color:red; margin-left:12px')}}
+                        <div>
+                            {% for error in form.confirmacion.errors %}
+                                <span style="color:red; font-size: small;">{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.confirmacion()}}
+                    {% endif %}
+                </fieldset>
+        </br>
+
+        </br>
+            <div class="boton">
+                <div class="boton-left">
+                    {{form.submit()}}
+                </div>   
+            </div>
+            
+        </form>
+        </div>
+
+    </div>    
+
+</div>
+
+
+<div class="pie">
+    <small> ES UNA PAGINA HECHA POR MOUSES EN  FRANKFURT Y CURAMAVIDA 2020</small>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>PADEL A BENEFICIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="contenedor-barra">
+        <div class="navegador">
+            <div class="left-side">
+                <div class="nav" >
+                    <a href="{{ url_for('home') }}">Home</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('Contact')}}">Contacto</a>
+                </div>
+                <div class="nav nav-act">
+                    <a href="{{ url_for('tournaments')}}">Campeonatos</a>
+                </div>
+            </div>
+            <div class="right-side">
+                PADEL A BENEFICIO
+            </div>
+        </div> 
+    </div>
+<h1>ESTOS HAN SIDO LOS CAMPEONATOS QUE HEMOS ORGANIZADO</h1>
+<p>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>PADEL A BENEFICIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="contenedor-barra">
+        <div class="navegador">
+            <div class="left-side">
+                <div class="nav" >
+                    <a href="{{ url_for('home') }}">Home</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('Contact')}}">Contacto</a>
+                </div>
+                <div class="nav ">
+                    <a href="{{ url_for('tournaments')}}">Campeonatos</a>
+                </div>
+            </div>
+            <div class="right-side">
+                PADEL A BENEFICIO
+            </div>
+        </div> 
+    </div>
+<h1>Inscripcion del Campeonato</h1>
+<div class="cabeza">
+    <div class="cabeza-lado">
+        <div class="cabeza-izq">
+            <p>Hola! Bienvenido. Para inscribirte debes colocar tu nombre y la de tu pareja. Para confirmar la participación debes
+                pagar lo antes posible. Te llegará un mail de confirmación.
+            </p>    
+            <p>La cuota de 15.000 tendrás que depositarla a la siguiente cuenta. </br> 
+                Nombre: Santiago José Larrain Valdes </br>
+                Rut: 19.688.452-1 </br>
+                Banco: BICE</br>
+                Cuenta: Vista</br></br>
+                Numero: 150282708</br>
+                Mail: padelabeneficio@gmail.com</br>
+
+            Porfavor incluye el mail de confirmacion. </p>
+        </div> 
+    
+        <div class="cabeza-der">
+            <h2>¡ESTAS INSCRITO!</h2>
+            <p>Deberías recibir un mail de confirmacion con datos para el pago. Tambien puedes escanear el siguiente QR MACH
+                para depositar a la cuenta!
+            </p>
+            <p>La incscripcion se hace efectiva con el pago de la inscripción</p>
+            <div class="pago-x">
+                <img src="static/imagenes/QR15000.jpeg" alt="" >
+            </div>
+            <div>
+                <a href="{{ url_for('inscripciones')}}">¿INSCRIBIR OTRA PAREJA?</a>
+                <a href="{{ url_for('home') }}"> Ir al Home</a>
+            </div>
+        </div>
+        
+
+    </div>    
+
+</div>
+
+
+<div class="pie">
+    <small> ES UNA PAGINA HECHA POR MOUSES EN  FRANKFURT Y CURAMAVIDA 2020</small>
+</div>
+
+</body>
+</html>
+
+
